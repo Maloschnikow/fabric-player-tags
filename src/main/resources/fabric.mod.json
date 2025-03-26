@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "player-tags",
+	"version": "${version}",
+	"name": "player-tags",
+	"description": "This mods adds tags to players (stylish)",
+	"authors": [
+		"Maloschnikow"
+	],
+	"contact": {
+		"homepage": "https://github.com/Maloschnikow",
+		"sources": "https://github.com/Maloschnikow/fabric-player-tags"
+	},
+	"license": "GPL-3.0",
+	"icon": "assets/player-tags/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"maloschnikow.playertags.Playertags"
+		],
+		"client": [
+			"maloschnikow.playertags.PlayertagsClient"
+		]
+	},
+	"mixins": [
+		"player-tags.mixins.json",
+		{
+			"config": "player-tags.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
