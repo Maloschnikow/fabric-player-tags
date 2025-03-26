@@ -39,7 +39,7 @@ public class CommandCustomPlayerTagSet implements Command<ServerCommandSource> {
 
 
         //check if player has permission to change other players tag
-        if( !commandSource.hasPermissionLevel(2) && player != commandSource.getPlayer() ) {
+        if( (!commandSource.hasPermissionLevel(2)) && player != commandSource.getPlayer() ) {
             throw new CommandSyntaxException(null, new WrongPermissionLevelMessage(2, "change another player's tag"));
         }
         
