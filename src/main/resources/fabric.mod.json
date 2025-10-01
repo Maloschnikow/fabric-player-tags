@@ -13,13 +13,10 @@
 	},
 	"license": "GPL-3.0",
 	"icon": "assets/player-tags/icon.png",
-	"environment": "*",
+	"environment": "server",
 	"entrypoints": {
 		"main": [
 			"maloschnikow.playertags.Playertags"
-		],
-		"client": [
-			"maloschnikow.playertags.PlayertagsClient"
 		]
 	},
 	"mixins": [
@@ -30,10 +27,10 @@
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.16.10",
-		"minecraft": "~1.21.4",
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.8",
 		"java": ">=21",
-		"fabric-api": "*"
+		"fabric-api": ">=0.133.4+1.21.8"
 	},
 	"suggests": {
 		"another-mod": "*"

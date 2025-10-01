@@ -1,12 +1,5 @@
 package maloschnikow.playertags;
 
-import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-import net.fabricmc.fabric.api.message.v1.ServerMessageEvents;
-import net.minecraft.command.argument.ColorArgumentType;
-import net.minecraft.command.argument.EntityArgumentType;
-import net.minecraft.server.command.CommandManager;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,7 +8,12 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 import maloschnikow.playertags.commands.CommandCustomPlayerTagRemove;
 import maloschnikow.playertags.commands.CommandCustomPlayerTagSet;
 import maloschnikow.playertags.handler.ChatMessageHandler;
-
+import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.message.v1.ServerMessageEvents;
+import net.minecraft.command.argument.ColorArgumentType;
+import net.minecraft.command.argument.EntityArgumentType;
+import net.minecraft.server.command.CommandManager;
 
 public class Playertags implements ModInitializer {
 	public static final String MOD_ID = "player-tags";

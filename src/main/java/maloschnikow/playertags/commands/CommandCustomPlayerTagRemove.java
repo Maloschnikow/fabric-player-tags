@@ -10,15 +10,15 @@ import net.minecraft.scoreboard.Team;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 
-
 public class CommandCustomPlayerTagRemove implements Command<ServerCommandSource> {
 
     @Override
     public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
+        
+        ServerCommandSource commandSource = context.getSource();
 
         //get arguments
         ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
-        ServerCommandSource commandSource = context.getSource();
 
         //check if player has permission to remove other players tag
         if( (!commandSource.hasPermissionLevel(2)) && player != commandSource.getPlayer() ) {
