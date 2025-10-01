@@ -7,9 +7,13 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 
 import maloschnikow.playertags.commands.CommandCustomPlayerTagRemove;
 import maloschnikow.playertags.commands.CommandCustomPlayerTagSet;
+import maloschnikow.playertags.handler.AfterDeathHandler;
 import maloschnikow.playertags.handler.ChatMessageHandler;
+import maloschnikow.playertags.handler.WorldTickHandler;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.message.v1.ServerMessageEvents;
 import net.minecraft.command.argument.ColorArgumentType;
 import net.minecraft.command.argument.EntityArgumentType;
@@ -55,6 +59,10 @@ public class Playertags implements ModInitializer {
 		
 		//register event to intercept chat messages, style them and broadcast them
 		ServerMessageEvents.ALLOW_CHAT_MESSAGE.register(new ChatMessageHandler());
+
+		ServerTickEvents.END_WORLD_TICK.register(new WorldTickHandler());
+
+		ServerLivingEntityEvents.AFTER_DEATH.register(new AfterDeathHandler());
 
 		LOGGER.info("Initialized.");
 	}

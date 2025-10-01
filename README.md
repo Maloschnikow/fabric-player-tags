@@ -5,9 +5,6 @@
 ### Usage
 `/playertag <player> <set|remove> [tag] <color>`
 
-### Problems
-- Pets adapt the team of their owner, if they aren't explicitly assigned to another team. This results in named pets also having the decorated tag of their owner.
-
 ### Development
 #### Build and deploy
 

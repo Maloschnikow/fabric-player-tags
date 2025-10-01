@@ -27,6 +27,7 @@ public class CommandCustomPlayerTagRemove implements Command<ServerCommandSource
 
         Team playerTeam = player.getServer().getScoreboard().getTeam(player.getUuidAsString());
         player.getServer().getScoreboard().removeTeam(playerTeam);
+        playerTeam.getScoreboard().removeTeam(playerTeam);
         
         return Command.SINGLE_SUCCESS;
     }
