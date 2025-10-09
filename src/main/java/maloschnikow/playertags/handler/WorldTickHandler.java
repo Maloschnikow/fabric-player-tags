@@ -34,7 +34,7 @@ public class WorldTickHandler implements EndWorldTick{
     private static void assignToOwnerTeam(TameableEntity tameable) {
         if (!(tameable.getOwner() instanceof ServerPlayerEntity player)) return;
 
-        Scoreboard scoreboard = ((ServerWorld) tameable.getWorld()).getScoreboard();
+        Scoreboard scoreboard = ((ServerWorld) tameable.getEntityWorld()).getScoreboard();
         String teamName = player.getUuidAsString() + "_pets";
 
         Team team = scoreboard.getTeam(teamName);
@@ -46,7 +46,7 @@ public class WorldTickHandler implements EndWorldTick{
     }
 
     private static void removeFromTeam(TameableEntity tameable) {
-        Scoreboard scoreboard = ((ServerWorld) tameable.getWorld()).getScoreboard();
+        Scoreboard scoreboard = ((ServerWorld) tameable.getEntityWorld()).getScoreboard();
         Team team = scoreboard.getScoreHolderTeam(tameable.getNameForScoreboard());
         if(team == null) { return; }
 

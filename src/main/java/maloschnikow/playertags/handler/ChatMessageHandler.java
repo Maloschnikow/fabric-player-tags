@@ -36,7 +36,7 @@ public class ChatMessageHandler implements AllowChatMessage {
 
 		Text modifiedMessage = senderCustomName.copy().append(Text.literal(": ").formatted(Formatting.WHITE)).append(Text.literal(message.getContent().getString()).formatted(Formatting.WHITE));
 
-		MinecraftServer server = sender.getServer();
+		MinecraftServer server = sender.getEntityWorld().getServer();
 		server.getPlayerManager().broadcast(modifiedMessage, false);
 
 		return false;

@@ -25,8 +25,9 @@ public class CommandCustomPlayerTagRemove implements Command<ServerCommandSource
             throw new CommandSyntaxException(null, new WrongPermissionLevelMessage(2, "remove another player's tag"));
         }
 
-        Team playerTeam = player.getServer().getScoreboard().getTeam(player.getUuidAsString());
-        player.getServer().getScoreboard().removeTeam(playerTeam);
+        Team playerTeam = player.getScoreboardTeam();
+        context.getSource().getServer().getScoreboard().removeTeam(playerTeam);
+        //player.getServer().getScoreboard().removeTeam(playerTeam);
         playerTeam.getScoreboard().removeTeam(playerTeam);
         
         return Command.SINGLE_SUCCESS;
